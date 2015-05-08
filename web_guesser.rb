@@ -34,6 +34,9 @@ get '/' do
     var = rand(101)
     counter = 0
   end
+  if params["cheat"] == "true"
+    message += "\nThe number is #{var}. Tell no one."
+  end
   erb :index, :locals => {:number => var,
                           :message => message,
                           :color => color}
